@@ -686,7 +686,25 @@ int func_8004E8BC(void) {
     return 1;
 }
 
-INCLUDE_ASM("asm/nonmatchings/_4a780", func_8004E8D0);
+int func_8004E8D0(int* arg1, int* arg2) {
+    int* temp_v1 = (int*)arg2[1];
+    int* temp_v2;
+    
+    if (temp_v1) {
+        (int)temp_v2 = temp_v1[7] |= 0x2000;
+        temp_v1[7] = (int)temp_v2;
+        
+        temp_v2 = (int*)arg2[1];
+        temp_v1 = (int*)temp_v2[9];
+        
+        if (temp_v1) {
+            (int)temp_v2 = temp_v1[4] |= 0x400;
+            temp_v1[4] = (int)temp_v2;
+            
+        }
+    }
+    return 1;
+}
 
 int func_8004E920(int* arg1, int **arg2) {
     
