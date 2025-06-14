@@ -330,7 +330,15 @@ int func_8004C66C(void) {
     return 1;
 }
 
-INCLUDE_ASM("asm/nonmatchings/_4a780", func_8004C674);
+int func_8004C674(int* arg1, int* arg2) {
+    int* temp_v1 = (int*)arg2[1];
+    short* temp_v2 = (short*)temp_v1[9];
+     
+    if (temp_v2) {
+        temp_v2[47] = (unsigned char)arg2[2];
+    }
+    return 1;
+}
 
 int func_8004C6A0(int* arg1, int* arg2) {
     int* temp_v0 = (int*)arg2[1];
