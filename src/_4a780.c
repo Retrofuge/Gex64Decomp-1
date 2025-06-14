@@ -552,7 +552,18 @@ INCLUDE_ASM("asm/nonmatchings/_4a780", func_8004D794);
 
 INCLUDE_ASM("asm/nonmatchings/_4a780", func_8004D83C);
 
-INCLUDE_ASM("asm/nonmatchings/_4a780", func_8004D8A8);
+extern int D_800EB9B4[];
+extern int D_800EB9B8[];
+
+int func_8004D8A8(int* arg1, short* arg2) {
+    short index = (int)arg2[2];  
+    int i = index * 3;
+
+    D_800EB9B4[i] = 0;
+    D_800EB9B8[i] = 0;
+
+    return 1;
+}
 
 INCLUDE_ASM("asm/nonmatchings/_4a780", func_8004D8DC);
 
